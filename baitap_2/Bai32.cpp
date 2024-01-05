@@ -4,7 +4,7 @@
 using namespace std;
 
 void tieude(){ 
-	cout<<left << setw(3) << "STT"<<setw(15)<<"Dia chi nha"<<setw(25)<<"Ho ten"<<setw(20)<<"Tuoi"<<setw(18)<<"Nam sinh"<<setw(15)<<"Nghe nghiep"<<endl;
+	cout<<left << setw(4) << "STT"<<setw(15)<<"Dia chi nha"<<setw(25)<<"Ho ten"<<setw(20)<<"Tuoi"<<setw(18)<<"Nam sinh"<<setw(15)<<"Nghe nghiep"<<endl;
 }
 class People {
 	protected:
@@ -52,7 +52,7 @@ class House {
             
             for (int i = 0; i < size; i++)
             {
-                cout << left << setw(3) << i+1 << setw(15) << address;
+                cout << left << setw(4) << i+1 << setw(15) << address;
                 member[i].xuat();
             }
         }
@@ -80,6 +80,7 @@ class District{
             }
         }
         void DistrictPr(){
+            system("cls");
             cout << "Khu pho co " << house_count << " ho dan\n";
             for (int i = 0; i < house_count; i++)
             {

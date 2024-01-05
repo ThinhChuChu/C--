@@ -13,6 +13,9 @@ public:
     }
 
     void nhap() {
+        cout << "Nhap bac da thuc:";
+        cin >> bac;
+        heso = new int[bac+1];
         cout << "Nhập hệ số của đa thức từ bậc cao nhất đến bậc thấp nhất:\n";
         for(int i = bac; i >= 0; i--) {
             cin >> heso[i];
@@ -20,10 +23,14 @@ public:
     }
 
     void xuat() {
-        for(int i = bac; i > 0; i--) {
-            cout << heso[i] << "x^" << i << " + ";
+        cout << heso[bac] << "x^" << bac;
+        for(int i = bac-1; i > 0; i--) {
+            (heso[i] > 0)
+                ? cout << " + " << heso[i] << "x^" << i 
+                : cout << " - " << -heso[i] << "x^" << i ;
         }
-        cout << heso[0] << endl;
+        (heso[0] > 0) ? cout << "+" << heso[0]
+                      : cout << heso[0];
     }
 
     DaThuc operator+(DaThuc const &obj) {
@@ -47,10 +54,12 @@ public:
 
         return hieu;
     }
+    ~DaThuc(){
+        delete[] heso;
+    }
 };
 int main(){
-    DaThuc a(4);
+    DaThuc a;
     a.nhap();
     a.xuat();
-
 }
